@@ -1,3 +1,10 @@
+/// QuickSort Algorithm
+/// Complexity:
+  /// Worse-case: O(n^2)
+  /// Average-case: O(nlog(n))
+/// Works well on smaller arrays
+/// Less storage space requirement than mergesort
+
 #include <iostream>
 #include <vector>
 
@@ -12,6 +19,7 @@ void swap(int *a, int *b) {
 // Use rightmost index as pivot
 void QuickSort(vector<int> &unsorted, int low, int pivot) {
   if (pivot - low == 0) return;
+  // Partition has two elements, check if they are sorted or if they need to swap
   if (pivot - low == 1) {
     if (unsorted[low] > unsorted[pivot]) swap(&unsorted[low], &unsorted[pivot]);
     return;
